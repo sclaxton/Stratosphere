@@ -1,0 +1,159 @@
+\documentclass[10pt]{article}
+\usepackage[table]{xcolor}
+\usepackage{fancyhdr}
+\usepackage{amsmath} 
+\usepackage[margin=3cm]{geometry}
+\usepackage{graphicx} 
+\usepackage{longtable}  
+\usepackage{multicol} 
+\usepackage{float}
+\usepackage{xparse}
+\usepackage{amssymb}
+\newcommand{\degrees}{\ensuremath{^\circ}}
+\usepackage{wrapfig}
+\usepackage{parskip}
+\usepackage{listings}
+\usepackage{enumerate}
+\newcommand{\csection}[1]{\section[#1]{\centering #1}}
+\newcommand{\csubsection}[1]{\subsection[#1]{\centering #1}}
+
+
+\newcommand{\code}[1]{\lstinline{#1}}
+\renewcommand{\d}{\ensuremath{\operatorname{d}\!}}
+\newcommand{\cin}[1]{{\scriptsize \lstinputlisting{#1}}}
+
+\newcommand{\del}{\vec\nabla}
+\newcommand{\p}{\partial}
+\newcommand{\E}[1]{\times10^{#1}}
+\newcommand{\eq}[1]{\begin{equation*}#1\end{equation*}}
+\newcommand{\al}[1]{\begin{align*}#1\end{align*}}
+\newcommand{\aln}[1]{\begin{align}#1\end{align}}
+\newcommand{\sub}[1]{_\text{#1}}
+% \newcommand{\qed}{\hfill \ensuremath{\Box}}
+\newcommand{\vv}{\mathbf}
+% \newcommand{\qed}{\hfill \ensuremath{\Box}~~~~~~~}
+
+\newcommand{\dd}[2]{\frac{\d\,#1}{\d\,#2}}
+\newcommand{\ddo}[1]{\frac{d}{d\,#1}}
+\newcommand{\ddt}[1]{\frac{\d\,#1}{\d\,t}}
+\newcommand{\dds}[2]{\frac{\d^2\,#1}{\d\,#2^2}}
+\newcommand{\pd}[2]{\frac{\partial \,#1}{\partial \,#2}}
+\newcommand{\spd}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\lp}{\left(}
+\newcommand{\rp}{\right)}
+
+\newcommand{\lb}{\left[}
+\newcommand{\rb}{\right]}
+
+
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{
+  language=C,          
+  % backgroundcolor=\color{gray}
+  keywordstyle=\color{blue}\sffamily\bfseries,  
+  commentstyle=\color{dkgreen}\itshape,    
+  backgroundcolor=\color{Yellow!25},
+  basicstyle=\sffamily,
+  % basicstyle=\footnotesize,  
+  numbers=left,              
+  numberstyle=\footnotesize,      
+  stepnumber=5,                   
+  numbersep=5pt,                  
+  backgroundcolor=\color{white},  
+  showspaces=false,               
+  showstringspaces=false,         
+  showtabs=false,                 
+  frame=single,           
+  framerule=0.2pt,%expands outward 
+  % rulecolor=\color{red},
+  % framesep=3pt,%expands outward
+  tabsize=4,          
+  captionpos=b,           
+  breaklines=true,        
+  breakatwhitespace=false,    
+  xleftmargin=3.2pt,
+  xrightmargin=15pt,
+}
+
+\definecolor{lightblue}{rgb}{0.83,0.85,1.0}
+
+\newcommand{\shadetable}[5]
+{
+  \begin{table}[H] 
+    \begin{center}
+      \caption{#3} \vspace{5pt}
+      \rowcolors{1}{}{lightblue}
+      \begin{tabular}{#1} \hline 
+        #2 \\
+        \hline
+        #4 \\
+        \hline                       
+      \end{tabular}
+      \label{#5}
+    \end{center}
+  \end{table}
+}
+% \shadetable{c|c}{column1 & column2}
+% {Test Table 1}{  
+%   a & b \\
+%   c & d
+% }{tab:test1}
+
+
+
+\DeclareDocumentCommand\m{ m g g g g g g g g}
+  {
+    \left( 
+      \begin{smallmatrix} 
+        #1
+        \IfNoValueF{#2}{\\#2}
+        \IfNoValueF{#3}{\\#3}
+        \IfNoValueF{#4}{\\#4}
+        \IfNoValueF{#5}{\\#5}
+        \IfNoValueF{#6}{\\#6}
+        \IfNoValueF{#7}{\\#7}
+        \IfNoValueF{#8}{\\#8}
+        \IfNoValueF{#9}{\\#9}
+      \end{smallmatrix} 
+    \right)
+}
+% \m{row1}[{row2}][{...}{...}...]
+
+\newcommand{\fig}[4]
+{
+  \begin{figure}[h] \centering \vspace{-10pt} 
+    \includegraphics[width=#4\textwidth]{#1} \vspace{-10pt} 
+    \caption{#2} \label{#3}
+  \end{figure}
+}
+% \figH {FILENAME}{CAPTION}{LABEL}{WIDTH}       
+
+\newcommand{\figH}[4]
+{
+  \begin{figure}[H] \centering \vspace{-10pt} 
+    \includegraphics[width=#4\textwidth]{#1}\vspace{-10pt} 
+    \caption{#2} \label{#3}
+  \end{figure}
+} 
+% \figH {FILENAME}{CAPTION}{LABEL}{WIDTH}       
+
+
+% \AtBeginDocument{%
+  % \setlength\abovedisplayskip{0pt}
+  % \setlength\belowdisplayskip{0pt}}
+
+% ------------------------------------------------------------------------
+%                               Page Style
+% ------------------------------------------------------------------------
+
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhf{}
+
+\lhead{\fancyplain{}{\rightmark }}
+\cfoot{\fancyplain{}{\thepage}}

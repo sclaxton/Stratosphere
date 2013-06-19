@@ -1,0 +1,8 @@
+\contentsline {section}{\numberline {1}What is Stratosphere}{2}
+\contentsline {subsection}{\numberline {1.1}Why Stratosphere}{2}
+\contentsline {subsection}{\numberline {1.2}A Data-based network}{2}
+\contentsline {subsection}{\numberline {1.3}Peer-Authentication}{2}
+\contentsline {subsection}{\numberline {1.4}Visibility and Privacy}{2}
+\contentsline {section}{\numberline {2}Implementation Challenges}{3}
+\contentsline {subsection}{\numberline {2.1}User-to-Data Interactions}{3}
+\contentsline {subsection}{\numberline {2.2}User-to-User Interaction}{3}

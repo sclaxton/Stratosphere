@@ -1,0 +1,104 @@
+{
+   fuse_destroy-runs-on-exit
+   Memcheck:Leak
+   ...
+   fun:fuse_new_common
+   fun:main
+}
+{
+   session_free-runs-on-exit
+   Memcheck:Leak
+   ...
+   fun:session_set_uri
+   fun:main
+}
+{
+   ne_addr_destroy-runs-later
+   Memcheck:Leak
+   fun:malloc
+   fun:make_request
+   fun:__check_pf
+   fun:getaddrinfo
+   fun:ne_addr_resolve
+   fun:lookup_host.isra.1
+   ...
+}
+{
+   gnutls_global_deinit-runs-on-exit
+   Memcheck:Leak
+   ...
+   fun:ne_sock_init
+   fun:main
+}
+{
+   fuse_unmount-runs-on-exit
+   Memcheck:Leak
+   ...
+   fun:fuse_mount_common
+   fun:main
+}
+{
+   mountpoint-freed-on-exit
+   Memcheck:Leak
+   ...
+   fun:fuse_opt_parse
+   fun:fuse_parse_cmdline
+   fun:main
+}
+{
+   fuse_opt_free_args-runs-on-exit
+   Memcheck:Leak
+   ...
+   fun:fuse_opt_parse
+   fun:main
+}
+{
+   leveldb_options_destroy-runs-on-exit
+   Memcheck:Leak
+   ...
+   fun:leveldb_options_create
+   fun:stat_cache_open
+   fun:main
+}
+{
+   leveldb_put-unix-magic
+   Memcheck:Value8
+   fun:_ZN7leveldb6crc32c6ExtendEjPKcm
+}
+{
+   fuse_kern_chan_send
+   Memcheck:Param
+   writev(vector[...])
+   fun:writev
+   fun:fuse_kern_chan_send
+   fun:fuse_send_reply_iov_nofree
+   fun:send_reply_iov
+   fun:send_reply_ok
+   fun:fuse_reply_create
+   fun:fuse_lib_create
+   fun:do_create
+   fun:fuse_ll_process
+   fun:fuse_do_work
+   fun:start_thread
+   fun:clone
+}
+{
+   free-runs-later
+   Memcheck:Leak
+   ...
+   fun:leveldb_get
+   fun:stat_cache_value_get
+   fun:get_stat
+   ...
+}
+{
+   leveldb-CompactMemTable
+   Memcheck:Cond
+   ...
+   fun:_ZN7leveldb6DBImpl15CompactMemTableEv
+   fun:_ZN7leveldb6DBImpl20BackgroundCompactionEv
+   fun:_ZN7leveldb6DBImpl14BackgroundCallEv
+   fun:_ZN7leveldb12_GLOBAL__N_18PosixEnv15BGThreadWrapperEPv
+   fun:start_thread
+   fun:clone
+}
