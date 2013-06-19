@@ -1,5 +1,9 @@
 TODO
 
 Create keypair for open trial vm
-create server on closed vm 
-create client on open vm
+
+Create server on closed vm 
+
+Create client on open vm
+
+Monitor log data 
