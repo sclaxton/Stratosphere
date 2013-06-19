@@ -1,6 +1,6 @@
 TODO
 
-Create keypair for open trial vm
+IP for test machine: 172.16.1.72
 
 Create server on closed vm 
 
