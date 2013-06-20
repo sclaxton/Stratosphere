@@ -6,18 +6,19 @@
 
 \title{
   Stratosphere \\ 
-  \small{A multilevel data-based forum for cloud computing}
+  \small{A multilevel data-driven forum for cloud computing}
 } 
 
 \author{
   Miller, Joshua \\
   Claxton, Spencer \\
   Mukora, Alice \\
-  Fleming, Zac
+  Griffis, Eric
 }
 
 \date{\small{18 June 2013}}
 
+\newcommand\XXX[1]{{\color{red} #1}}
 
 \begin{document}
 \rhead{\fancyplain{}{Stratosphere Proposal}}
@@ -26,61 +27,111 @@
 
 \begin{abstract}
 
-  Stratosphere is a data-based collection of tools for connecting
-  cloud researchers amongst disciplines.  The method for doing this
-  includes data access records, peer authentication of user
-  generated data, and making users and their research visible to other users.
+  \XXX{Modern social networking tools are fine for some things, but
+OSDC offers specific advantages to data researchers in finding and
+forming relationships among peers that share research
+interests. \ldots} In this proposal we discuss \emph{Stratosphere}, a
+social component for OSDC that provides data researchers with new
+opportunities to identify and connect to peers with similar interests.
+Stratosphere is a collection of data-oriented tools that connects
+cloud researchers with similar data consumption patterns. Our methods
+for doing this include data access record aggregation and
+presentation, peer authentication of user generated data, and making
+users and their research visible to other users.
 
-  We are attempting to sell an idea here. We have no proof of concept
-  save the precedent of other social networks and the benefits they offer.
+  %% unnecessary:
+  %% 
+  %% We are attempting to sell an idea here. We have no proof of concept
+  %% save the precedent of other social networks and the benefits they offer.
 
 \end{abstract}
 
 \tableofcontents
 \newpage
 \begin{multicols*}{2}
-\section{What is Stratosphere}
 
-Stratosphere is a data-based social-network-like system with the goal
-of connecting researchers in different groups and disciplines.
-Stratosphere is composed of two layers, the user interaction layer and
-the data interaction layer.  The user interaction layer is a
-superstructure designed with social networking in mind to create a
-social interdisciplinary network centered around the data.  The data
-interaction layer handles user access to data. Stratosphere provides a
-peer approval system for file permissions of user submitted data and
-informs the users of who is using the data and with what intent.
+\section{Introduction}
+\label{sec:intro}
+
+\XXX{Modern social networking tools are fine for some things, but OSDC
+offers specific advantages to data researchers in finding and forming
+relationships among peers that share research interests. \ldots}
+
+By adding a social component to the OSDC experience, we aim to provide
+data researchers with a unique opportunity to identify and connect to
+peers with similar interests and data consumption habits. Beyond the
+obvious benefits of conventional social networking tools like Facebook
+for fostering collaboration, OSDC users also stand benefit from the
+fact that their interests are encoded in their data usage patterns.
+
+%% if you don't want to reference sections explicitly, rewrite
+%% "Section \ref{...}" in the following paragraph with something
+%% natural like "First, we ...'' and then disable section numbering.
+
+This proposal proceeds as follows. Section \ref{sec:why} motivates the
+Stratosphere design by clearly defining what we perceive to be the
+weaknesses of popular social networks for fostering data intensive
+research collaboration relationships in light of the unique
+opportunities offered by OSDC. Section \ref{sec:what} outlines our
+vision for the initial Stratosphere design. Section \ref{sec:how}
+details the implementation mechanisms required to implement our
+vision. Section \ref{sec:summary} summarizes this proposal concisely.
 
 \subsection{Why Stratosphere}
+\label{sec:why}
 
-Stratosphere attempts to address the problem of inter-connectivity
-between scientists using the OSDC system.  Currently, researchers are
-only connected to each other a priori, by institution or by prior
-collaboration.  The core concept of scientific cloud computing in an
-open setting is the promotion of collaboration and multifaceted
-approaches to data analysis.  Users are currently cut off from peer
-collaboration on research projects conducted via the cloud. By
-distributing the responsibility of project documentation and making
-the users visible to one another, the OSDC would promote direct
-interaction with researchers from different projects who desire to
-work on the same data set.
+Stratosphere attempts to leverage implicit inter-connectivity between
+scientists using the OSDC system. Currently, researchers are typically
+connected to each other a priori, by institution or through
+conferences or prior collaborations. The core concept of scientific
+cloud computing in an open setting is the promotion of collaboration
+and multifaceted approaches to data analysis. Users are currently cut
+off from peer collaboration on research projects conducted via the
+cloud. By distributing the responsibility of project documentation and
+making users visible to one another, the OSDC would be promoting
+direct interactions between researchers from different projects that
+express interest in the same datasets. We suspect that connections
+forged within the context of Stratosphere are more likely to lead to
+successful collaborations because such connections are derived from
+explicit matchings within the interest and problem domains.
 
-\subsection{A Data-based network}
+\section{What is Stratosphere}
+\label{sec:what}
 
-The main infrastructure of Stratosphere is data based.  This means
-that user access is documented in a metadata descriptor attached to
-each data set. For example, user access to the dataset might tally a
-rate counter specific to that individual user.  Using this rate, we
-would be able to present a list of top users for each dataset to other
-users interested in the data. Furthermore, data frequently used by an
+Stratosphere is a data-driven social networking platform that connects
+researchers in related groups and disciplines. Stratosphere is
+composed of two layers: the user interaction layer and the data
+interaction layer. The user interaction layer is a superstructure
+designed with social networking in mind to create a social
+interdisciplinary network centered around datasets. The data
+interaction layer handles user access to the data. Stratosphere
+provides a peer approval system for file permissions of user submitted
+data and informs users of who is using which data and with what
+intent.
+
+\section{How Stratosphere Works}
+\label{sec:how}
+
+\XXX{Our implementation involves 
+
+\subsection{A Data-driven Network}
+
+The main infrastructure of Stratosphere is \emph{data driven}, which
+means that user data interactions are logged in a metadata descriptor
+attached to each data set. For example, when a user accesses a
+particular dataset, rate counters specific to each individual user
+could be incremented. Using these rates, we could present lists of the
+most active users for each dataset to other users who express interest
+in the same datasets. Furthermore, data frequently used by an
 individual would be represented as specializations on the Stratosphere
-front end. The metadata includes username, last access, number of
-accesses, project, project description, and contact.
-
+front end. A metadata entry includes a username, the most recent
+access time, and an access tally. Other relevant user-supplied
+information like project descriptions and contact information would be
+stored similarly.
 
 \figH {metaRecording.png}{Process of recording user access metadata}{metarecord}{.5}       
 
-\subsection{Peer-Authentication}
+\subsection{Peer Authentication}
 
 This social-interactive system aids the moderation of user
 permissions.  When users add data to the cloud they are able to assign
@@ -101,19 +152,16 @@ user's data access. For this reason, we propose the use of defaults
 which lean towards full record keeping and visibility, with the option
 to remove such visibility.
 
-\section{Implementation Challenges}
-
 \subsection{User-to-Data Interactions}
 
-The user to data interaction is the most challenging aspect of this
-project.  The tools that need to be implemented for this include the
-implementation of
+The user-to-data interaction is the most challenging aspect of this
+project. Required tools include implementations for
 \begin{itemize}
 \item file monitoring for user access records
 \item peer authenticated permissions
 \end{itemize}
 
-\textbf{File monitoring}
+\subsection{File Monitoring}
 
 Possibilities for monitoring the frequency of data access include
 tools such as \textit{inotify}, or direct patching of the file
@@ -127,7 +175,7 @@ counter.  The main assumption is that the users who access the data
 the most have the highest interest and experience with the particular
 data set.
 
-\textbf{Metadata creation}
+\subsection{Metadata Creation}
 
 We propose to include metadata based on who accesses the data, how
 often they access the data, and for what purpose they are accessing
@@ -139,7 +187,7 @@ mounting system to intercept and record the request.  We have provided
 a proof of concept implementation (using XML metadata) of a file
 system mount adapted from \textbf{fusedev} for this purpose.
 
-\textbf{Permissions}
+\subsection{Permissions}
 
 The task of creating peer authenticated permissions is a far more
 challenging problem. Currently, the OSDC cloud operates on basic Unix
@@ -163,6 +211,21 @@ and linked to the data that the user has accessed. The biggest
 challenge here would be integrating such a social network with the
 current OSDC interface (the Tukey portal).
 
+\section{Summary}
+\label{sec:summary}
+
+We believe that, in light of the unusual opportunities made possible
+by OSDC infrastructure, popular social networks are poorly positioned
+to target opportunities for data intensive research to a comparable
+degree. To tap this new resource we proposed Stratosphere, a social
+networking platform that we believe rings true to the spirit of OSDC's
+scientific cloud computing effort. Finally, to substantiate the
+feasibility of our proposal, we outlined a specific implementation
+strategy along with the details of various other practical matters,
+such as what we believe to be the most significant sources
+of \XXX{error and uncertainty.}
+
+\XXX{Something witty, profound, clever, etc. to tie off the end.}
 
 \end{multicols*}
 \end{document}
