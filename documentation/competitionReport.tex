@@ -6,7 +6,7 @@
 
 \title{
   Stratosphere \\ 
-  \small{A multilevel data-driven forum for cloud computing}
+  \small{A multilevel data-driven social-network for cloud computing}
 } 
 
 \author{
@@ -35,7 +35,7 @@ opinion the OSDC offers a unique opportunity for scientists to form
 relationships among peers that share research interests centered
 around the data analyzing power that it provides. In this proposal 
 we discuss \emph{Stratosphere}, a social network extension of the current OSDC
-system that provides data researchers with new opportunities to
+console that provides data researchers with new opportunities to
 identify and connect to peers with similar research interests.
 Stratosphere is a collection of data-oriented tools that connects
 cloud researchers with similar data consumption patterns. Our methods
@@ -65,10 +65,12 @@ fact that their interests are encoded in their data usage patterns.
 \\
 \\
 This proposal proceeds as follows. First we motivate
-Stratosphere design by clearly defining what we perceive to be the
-weaknesses of popular social networks for fostering data intensive
+the Stratosphere design by clearly defining what we perceive to be the
+insufficiency of popular social networks for fostering data intensive
 research collaboration relationships, in light of the unique
-opportunities offered by OSDC. We then proceed to outline our
+opportunities offered by OSDC. We also here highlight what
+Stratosphere adds to OSDC in terms of how efficiently data is handled
+and curated. We then proceed to outline our
 vision for the initial Stratosphere design. Finally we end by
 detailing the necessary mechanisms required to implement our
 vision for Stratosphere. We conclude with a glance toward the
@@ -88,9 +90,19 @@ cloud. By distributing the responsibility of project documentation and
 making users visible to one another, the OSDC would be promoting
 direct interactions between researchers from different projects that
 express interest in the same datasets. We suspect that connections
-forged within the context of Stratosphere are more likely to lead to
+forged within the context of the OSDC and Stratosphere are more likely to lead to
 successful collaborations because such connections are derived from
-explicit matchings within the interest and problem domains.
+explicit matching within the interest and problem domains.
+\\
+\\
+We also foresee that by keeping track of the data usage of users,
+Stratosphere will enable the OSDC administration to be more sensitive to the
+data-oriented needs of its users. For example, Stratosphere would allow the
+OSDC to have more insight into choosing what data to keep more or less
+up to date on the cloud based on what data is more or less relevant to users.
+Along the same lines, when peer-to-peer authentication is a reality on
+the OSDC, Stratosphere provides a way for users to monitor who is
+working with their data and how often. 
 
 \section{What is Stratosphere}
 \label{sec:what}
@@ -111,7 +123,7 @@ intent.
 
 \subsection{A Data-driven Network}
 
-The main infrastructure of Stratosphere is \emph{data driven}. This
+The main infrastructure of Stratosphere is \emph{data-driven}. This
 mean that all interaction between users and the rest of the network is
 mediated through the data. One way we propose to accomplish this is by logging
 user-data interaction in a metadata descriptor attached to each data
