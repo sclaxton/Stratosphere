@@ -90,19 +90,26 @@ cloud. By distributing the responsibility of project documentation and
 making users visible to one another, the OSDC would be promoting
 direct interactions between researchers from different projects that
 express interest in the same datasets. We suspect that connections
-forged within the context of the OSDC and Stratosphere are more likely to lead to
-successful collaborations because such connections are derived from
-explicit matching within the interest and problem domains.
+forged within the context of the OSDC and Stratosphere are more likely
+to lead to successful collaborations because such connections are
+derived from explicit matching within the interest and problem
+domains.
 \\
 \\
 We also foresee that by keeping track of the data usage of users,
-Stratosphere will enable the OSDC administration to be more sensitive to the
-data-oriented needs of its users. For example, Stratosphere would allow the
-OSDC to have more insight into choosing what data to keep more or less
-up to date on the cloud based on what data is more or less relevant to users.
-Along the same lines, when peer-to-peer authentication is a reality on
-the OSDC, Stratosphere provides a way for users to monitor who is
-working with their data and how often. 
+Stratosphere will enable the OSDC administration to be more sensitive
+to the data-oriented needs of its users. For example, Stratosphere
+would allow the OSDC to have more insight into choosing what data to
+keep more or less up to date on the cloud based on what data is more
+or less relevant to users.  
+
+Similarly, we feel that our data access records address the
+difficulties associated with hosting user generated data on the cloud.  By hosting
+the data on the cloud, it becomes difficult to tell who is using data,
+as traditional methods such as tracking downloads are no longer
+available.  Stratosphere would be able provide usage reports to
+researchers about their own data.  This is important for compiling
+reports about the usability of user generated data.
 
 \section{What is Stratosphere}
 \label{sec:what}
@@ -118,7 +125,7 @@ provides a peer approval system for file permissions of user submitted
 data and informs users of who is using which data and with what
 intent.
 \vspace{10pt}
-\figH{CDiagram_gray.png}{Stratosphere structure}{strat}{.5}
+% \figH{CDiagram_gray.png}{Stratosphere structure}{strat}{.5}
 
 
 \section{How Stratosphere Works}
@@ -128,61 +135,61 @@ intent.
 
 The main infrastructure of Stratosphere is \emph{data-driven}. This
 mean that all interaction between users and the rest of the network is
-mediated through the data. One way we propose to accomplish this is by logging
-user-data interaction in a metadata descriptor attached to each data
-set. For example, when a user accesses a particular dataset, 
-rate counters specific to each individual user
-could be incremented. Using these rates, we could present lists of the
-most active users for each dataset to other users who express interest
-in the same datasets. Furthermore, data frequently used by an
-individual would be represented as specializations on that users
-profile on Stratosphere front end. A metadata entry might 
-include a username, the most recent access time, and an access tally. 
-Other relevant user-supplied information like project descriptions 
-and contact information would be stored similarly.
+mediated through the data. One way we propose to accomplish this is by
+logging user-data interaction in a metadata descriptor attached to
+each data set. For example, when a user accesses a particular dataset,
+rate counters specific to each individual user could be
+incremented. Using these rates, we could present lists of the most
+active users for each dataset to other users who express interest in
+the same datasets. Furthermore, data frequently used by an individual
+would be represented as specializations on that users profile on
+Stratosphere front end. A metadata entry might include a username, the
+most recent access time, and an access tally.  Other relevant
+user-supplied information like project descriptions and contact
+information would be stored similarly.
 
 
 \figH {metaRecording.png}{Process of recording user access metadata}{metarecord}{.5}       
 
 \subsection{Peer Authentication}
 
-This social-interactive system would also provide a framework for
-the moderation of user permissions.  When 
-users add data to the cloud they are able to assign
-ownership to the data set, with the default being public
-ownership. Publicly owned data sets require no permissions to access.
-Should the creator of a data set request ownership, then he,she, or
-selected other users take the responsibility of being an
-administrative user. Users are then granted access to the data set by
-the administrative user.
+This social-interactive system would also provide a framework for the
+moderation of user permissions.  When users add data to the cloud they
+are able to assign ownership to the data set, with the default being
+public ownership. Publicly owned data sets require no permissions to
+access.  Should the creator of a data set request ownership, then
+he,she, or selected other users take the responsibility of being an
+administrative user. Users are then granted read access to the data
+set by the administrative user.
 
 \subsection{User Visibility and User-to-User Interaction}
 
 The main goal of Stratosphere is to provide transparency through the
-current OSDC system. To do this we propose that users be given public profiles that
-display the data they are working with and their contact information.
-However, we are well aware that some actions need not be recorded in a
-user's data access. For this reason, we propose the use of defaults
-which lean towards full record keeping and visibility, with the option
-to remove such visibility. The primary way in which users will access
-these public profiles will be, again, data-centered. That is, users
-will have access to other users by seeing their the
-data-access records in the metadata. Thus, the data becomes the
-primary link between researchers. It is this ability of the metadata 
-to describe the data in terms of users access that makes the
-Stratosphere a truly data-driven social network. In this way, users are able to see 
-directly what peers are doing with the data they themselves are
-accessing. An implementation of user profiles would simply
-entail an addition to the current OSDC web front end that displays user info pulled
-from a database containing user activity statistics. 
+current OSDC system. To do this we propose that users be given public
+profiles that display the data they are working with and their contact
+information.  However, we are well aware that some actions need not be
+recorded in a user's data access. For this reason, we propose the use
+of defaults which lean towards full record keeping and visibility,
+with the option to remove such visibility. The primary way in which
+users will access these public profiles will be, again,
+data-centered. That is, users will have access to other users by
+seeing their the data-access records in the metadata. Thus, the data
+becomes the primary link between researchers. It is this ability of
+the metadata to describe the data in terms of users access that makes
+the Stratosphere a truly data-driven social network. In this way,
+users are able to see directly what peers are doing with the data they
+themselves are accessing. An implementation of user profiles would
+simply entail an addition to the current OSDC web front end that
+displays user info pulled from a database containing user activity
+statistics.
 
 \subsection{User-to-Data Interactions}
 
 The user-to-data interaction is the most challenging aspect of this
 project. Required tools include implementations for
 \begin{itemize}
-\item file monitoring for user access records
-\item peer authenticated permissions
+\item File monitoring for user access records
+\item Peer authenticated permissions
 \end{itemize}
 
 \subsection{File Monitoring}
@@ -233,18 +240,19 @@ it is big-data scalable.
 \label{sec:conclusion}
 
 We believe that, in light of the unusual opportunities made possible
-by the OSDC infrastructure, conventional social networks are poorly positioned
-to target opportunities for data intensive research collaboration
-between scientists. To tap this new resource we proposed Stratosphere, a social
-networking platform that we believe rings true to the spirit of the OSDC's
-scientific cloud computing effort. We envision that with Stratosphere, 
-the OSDC will become a microcosm for quantifiable collaboration between
-scientists using computational methods over big-data. That is, with
-Stratosphere, we will be able to gather data on how scientists
-interact with each other through the data that they are analyzing. We could
-thereby quantify in some way the collaboration that takes place
-between scientists, e.g. looking at the amount of analysis performed
-on a dataset before and after implementation of Stratosphere on the OSDC.  
+by the OSDC infrastructure, conventional social networks are poorly
+positioned to target opportunities for data intensive research
+collaboration between scientists. To tap this new resource we proposed
+Stratosphere, a social networking platform that we believe rings true
+to the spirit of the OSDC's scientific cloud computing effort. We
+envision that with Stratosphere, the OSDC will become a microcosm for
+quantifiable collaboration between scientists using computational
+methods over big-data. That is, with Stratosphere, we will be able to
+gather data on how scientists interact with each other through the
+data that they are analyzing. We could thereby quantify in some way
+the collaboration that takes place between scientists, e.g. looking at
+the amount of analysis performed on a dataset before and after
+implementation of Stratosphere on the OSDC.
 
 \end{multicols*}
 \end{document}
