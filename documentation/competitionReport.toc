@@ -7,6 +7,6 @@
 \contentsline {subsection}{\numberline {3.3}User Visibility and User-to-User Interaction}{3}
 \contentsline {subsection}{\numberline {3.4}User-to-Data Interactions}{3}
 \contentsline {subsection}{\numberline {3.5}File Monitoring}{3}
-\contentsline {subsection}{\numberline {3.6}Metadata Creation}{3}
+\contentsline {subsection}{\numberline {3.6}Metadata Creation}{4}
 \contentsline {subsection}{\numberline {3.7}Permissions}{4}
 \contentsline {section}{\numberline {4}Conclusion and the Future}{4}
