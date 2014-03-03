@@ -1,9 +1,9 @@
-TODO
+Winning project proposal for the OSDC-PIRE 2013 research proposal competition. 
 
-IP for test machine: 172.16.1.72
+The competeition website can be found [here](http://delaat.net/PIRE/). 
 
-Create server on closed vm 
 
-Create client on open vm
+Stratosphere
+============
 
-Monitor log data 
+The proposal maps out a concept for a data-centered social network built on top of the Open Science Data Cloud. The primary objective for the Stratosphere is to facillitate collaboration on research projects revolving around the same or related datasets and to promote a more connected research community on the Open Science Datacloud.
